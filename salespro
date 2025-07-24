@@ -1,27 +1,19 @@
-import numpy as np
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 
-data = {
-    'ad_spent': [1000, 3000, 5000, 7000],
-    'platform': ['TV', 'Social_life', 'TV', 'Social_life'],
-    'segment': ['Adult', 'Youth', 'Youth', 'Adult']
-}
+ranges_of_dates = pd.date_range(start='2018-01-01', end='2023-12-31',freq='M')
+np.random.seed(10) 
 
-df = pd.DataFrame(data)
+seasonal_rate = 5 + 0.5 * np.sin(2 * np.pi * dates.month / 12)
+covid_cases = np.where((dates >= '2020-03-01') & (dates <= '2022-03-01'),
+                       np.random.normal(2.5, 0.3, len(dates)), 0)
+noise = np.random.normal(0, 0.2, len(dates))
 
-df['platform_score'] = df['platform'].map({'TV': 1.0, 'Social_life': 1.5})
-df['segment_score'] = df['segment'].map({'Adult': 1.0, 'Youth': 1.2})
+unemployment_rate = seasonal_rate + covid_cases + noise
+data = pd.DataFrame({'Date': dates, 'Unemployment Rate': unemployment_rate.round(2)})
 
-df['sales'] = df['ad_spent'] * df['platform_score'] * df['segment_score'] / 1000
-
-print(df[['ad_spent', 'platform', 'segment', 'sales']])
-
-plt.figure(figsize=(6, 4))
-plt.plot(df['ad_spent'], df['sales'], marker='o', linestyle='-', color='red')
-plt.title('Ad Spent vs Predicted Sales')
-plt.xlabel('Ad Spent')
-plt.ylabel('Predicted Sales')
-plt.grid(True)
-plt.tight_layout()
-plt.show()
+plt.figure(figsize=(12, 6))
+plt.plot(data['Date'], data['Unemployment Rate'], label='Unemployment Rate (%)', color='darkblue')
+plt.axvspan(pd.to_datetime('2020-03-01'), pd.to_datetime('2022-03-01'),
+     …
