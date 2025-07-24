@@ -1,25 +1,27 @@
 # CodeAlpha_salespro
 
-Hi everyone..this project analyzes the relationship between ad spending, platform, and segment on predicted sales. The code creates a sample dataset, maps platform and segment scores, calculates predicted sales, and visualizes the relationship between ad spending and predicted sales.
+Analyzing Unemployment Trends during the COVID-19 Pandemic:
 
-#Key Features:
+Hi everyone..this project simulates unemployment rates from 2018 to 2023, incorporating seasonal trends and the impact of the COVID-19 pandemic. The code generates a synthetic dataset, calculates unemployment rates, and visualizes the trend with a highlighted COVID-19 period.
 
-- Data creation and manipulation using Pandas
-- Mapping platform and segment scores to calculate predicted sales
-- Data visualization using Matplotlib to illustrate the relationship between ad spending and predicted sales
+Key Features:
 
-#Code Highlights:
+- Simulation of unemployment rates with seasonal trends and pandemic impact
+- Data visualization using Matplotlib to illustrate the unemployment trend
+- Highlighting the COVID-19 period (March 2020 to March 2022) in the visualization
 
-- Sample dataset creation with ad spending, platform, and segment data
-- Calculation of predicted sales based on platform and segment scores
-- Visualization of ad spending vs predicted sales using a line plot with markers
+Code Highlights:
 
-#Usage:
+- Generating synthetic unemployment rate data using Pandas and NumPy
+- Calculating unemployment rates with seasonal trends and pandemic impact
+- Visualizing the unemployment trend with a line plot and highlighted COVID-19 period
+
+Usage:
 
 1. Clone the repository
-2. Run the code to generate the sample dataset and visualization
+2. Run the code to generate the synthetic dataset and visualization
 
-#Libraries Used:
+Libraries Used:
 
 - Pandas for data manipulation and analysis
 - NumPy for numerical computations
