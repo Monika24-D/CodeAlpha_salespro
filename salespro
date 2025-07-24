@@ -1,0 +1,27 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'ad_spent': [1000, 3000, 5000, 7000],
+    'platform': ['TV', 'Social_life', 'TV', 'Social_life'],
+    'segment': ['Adult', 'Youth', 'Youth', 'Adult']
+}
+
+df = pd.DataFrame(data)
+
+df['platform_score'] = df['platform'].map({'TV': 1.0, 'Social_life': 1.5})
+df['segment_score'] = df['segment'].map({'Adult': 1.0, 'Youth': 1.2})
+
+df['sales'] = df['ad_spent'] * df['platform_score'] * df['segment_score'] / 1000
+
+print(df[['ad_spent', 'platform', 'segment', 'sales']])
+
+plt.figure(figsize=(6, 4))
+plt.plot(df['ad_spent'], df['sales'], marker='o', linestyle='-', color='red')
+plt.title('Ad Spent vs Predicted Sales')
+plt.xlabel('Ad Spent')
+plt.ylabel('Predicted Sales')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
