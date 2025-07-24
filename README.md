@@ -1,8 +1,6 @@
 # CodeAlpha_salespro
-hi everyone.. here's the description for the code to predict future sales based on factors like advertising spend,target segment and platform..
-#Ad Spending Impact on Predicted Sales
 
-This project analyzes the relationship between ad spending, platform, and segment on predicted sales. The code creates a sample dataset, maps platform and segment scores, calculates predicted sales, and visualizes the relationship between ad spending and predicted sales.
+Hi everyone..this project analyzes the relationship between ad spending, platform, and segment on predicted sales. The code creates a sample dataset, maps platform and segment scores, calculates predicted sales, and visualizes the relationship between ad spending and predicted sales.
 
 #Key Features:
 
